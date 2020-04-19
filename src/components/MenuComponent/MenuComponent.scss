@@ -1,0 +1,22 @@
+@import "../../variables";
+
+.Menu {
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+    background-color: $color5;
+    font-size: calc(10px + 2vmin);
+    color: white;
+
+    a {
+        color: white;
+        text-decoration: none;
+        margin: 5px;
+    }
+    a:hover {
+        background-color: $color1;
+    }
+}

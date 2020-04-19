@@ -1,0 +1,12 @@
+.AbstractEditComponent-label {
+    display: block;
+    font-size: small;
+    margin-bottom: 10px;
+    > * {
+        display: block;
+        width:100%;
+        > * {
+            width: inherit;
+        }
+    }
+}

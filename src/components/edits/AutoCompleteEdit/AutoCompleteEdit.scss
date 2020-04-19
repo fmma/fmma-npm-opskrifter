@@ -1,0 +1,23 @@
+.AutoCompleteFullScreen {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: white;
+    z-index: 10;
+    overflow: hidden;
+
+    input {
+        width:100%;
+    }
+
+    .AutoCompleteButton {
+        background-color: #FFFFFF;
+        color: #FFFFFF;
+        padding: 0 5px;
+        margin: 2.5px 5px;
+        border: 1px solid black;
+        width: auto;
+    }
+}

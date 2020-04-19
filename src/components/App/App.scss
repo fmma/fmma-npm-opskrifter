@@ -1,0 +1,23 @@
+@import "../../variables";
+
+.App {
+    button {
+        background-color: $color2; /* Green */
+        border: none;
+        border-radius: 5px;
+        color: white;
+        padding: 10px 32px;
+        margin: 10px 0;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        width: 100%
+    }
+
+    .SpanButton{
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+    }
+}

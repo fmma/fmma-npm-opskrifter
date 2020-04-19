@@ -1,0 +1,13 @@
+.ColorEdit {
+    .ColorBox {
+        background-color: #FFFFFF;
+        color: black;
+        padding: 0;
+        margin: 0;
+        border: 1px solid black;
+    }
+    .ColorPickerPopup {
+        position: absolute;
+        z-index: 1000;
+    }
+}
