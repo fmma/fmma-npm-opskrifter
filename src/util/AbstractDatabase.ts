@@ -2,7 +2,6 @@ import { Ingrediens } from "../models/Ingrediens";
 import { Opskrift } from "../models/Opskrift";
 import { Tag } from "../models/Tag";
 import { TagStats } from "../models/TagStats";
-import { refreshImageUrlTokens } from "./Media";
 
 export abstract class AbstractDatabase {
 
@@ -14,9 +13,9 @@ export abstract class AbstractDatabase {
 
     async getOpskriftAndRefreshImageTokens(id: string): Promise<Opskrift | undefined> {
         const opskrift = await this.getOpskrift(id);
-        if(opskrift) {
-            opskrift.content = await refreshImageUrlTokens(opskrift.content);
-        }
+//        if(opskrift) {
+//            opskrift.content = await refreshImageUrlTokens(opskrift.content);
+//        }
         return opskrift;
     }
 

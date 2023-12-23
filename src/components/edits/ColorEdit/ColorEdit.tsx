@@ -13,7 +13,7 @@ export class ColorEdit<Tkey extends string> extends AbstractEdit<Tkey, string> {
                 className="ColorBox"
                 style={{ backgroundColor: this.value }}
                 disabled={true}
-            >Vælg farve</button>
+            >Vælg</button>
         );
     }
 
@@ -22,7 +22,7 @@ export class ColorEdit<Tkey extends string> extends AbstractEdit<Tkey, string> {
             <button
                 onMouseUp={this.toggleShowPicker.bind(this)}
                 className="ColorBox"
-                style={{ backgroundColor: this.value }}>F</button>,
+                style={{ backgroundColor: this.value }}>Vælg</button>,
             ...singleOrEmpty(this.showPicker,  () => this.renderPicker())
         ];
     }

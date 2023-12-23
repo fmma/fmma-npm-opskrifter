@@ -1,9 +1,9 @@
 import { Editor } from '@tinymce/tinymce-react';
+import imageCompression from 'browser-image-compression';
 import React from "react";
-import { getMediaUrl, putMedia } from '../../../util/Media';
+import { Media } from '../../../util/DependencyInjection';
 import { AbstractEdit } from "../AbstractEdit/AbstractEdit";
 import './RichTextEdit.scss';
-import imageCompression from 'browser-image-compression';
 
 export interface BlobInfo {
     id: () => string;
@@ -16,6 +16,8 @@ export interface BlobInfo {
 }
 
 export class RichTextEdit<Tkey extends string> extends AbstractEdit<Tkey, string> {
+
+
     name = 'RichTextEdit';
 
     renderEdit() {
@@ -32,7 +34,7 @@ export class RichTextEdit<Tkey extends string> extends AbstractEdit<Tkey, string
                     plugins: [
                         'advlist autolink lists link image emoticons charmap print preview anchor',
                         'searchreplace visualblocks code fullscreen',
-                        'insertdatetime media table paste code help wordcount'
+                        'insertdatetime media table paste code help wordcount super-easy-media-plugin'
                     ],
                     toolbar:
                         'image emoticons | undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist | help',
@@ -43,6 +45,9 @@ export class RichTextEdit<Tkey extends string> extends AbstractEdit<Tkey, string
                             .then(x => success(x))
                             .catch(x => failure(x));
                     },
+                    setup: (editor:any) => {
+                        console.log(editor);
+                    }
                 }}
                 onEditorChange={this.handleEditorChange}
             />
@@ -77,10 +82,7 @@ export class RichTextEdit<Tkey extends string> extends AbstractEdit<Tkey, string
         console.log('compressedFile instanceof Blob', compressedFile instanceof Blob); // true
         console.log(`compressedFile size ${compressedFile.size / 1024 / 1024} MB`); // smaller than maxSizeMB
 
-        const x = await putMedia(blobInfo.filename(), compressedFile)
-        console.log(x.s3ObjectKey);
-        const y = await getMediaUrl(x.s3ObjectKey)
-        return y;
-
+        const x = await Media.putMedia(blobInfo.filename(), compressedFile)
+        return x;
     }
 }

@@ -4,7 +4,7 @@ import { Ingrediens } from '../../../models/Ingrediens';
 import { Opskrift } from '../../../models/Opskrift';
 import { Tag } from '../../../models/Tag';
 import { AbstractRouteComponent } from '../../../util/AbstractRouteComponent';
-import { Database } from '../../../util/DatabaseInjection';
+import { Database } from '../../../util/DependencyInjection';
 import { currentUser } from '../../../util/User';
 import { ActionButtonComponent } from '../../ActionButtonComponent/ActionButtonComponent';
 import { DropDownEdit } from '../../edits/DropDownEdit/DropDownEdit';

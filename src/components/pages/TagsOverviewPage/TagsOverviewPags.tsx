@@ -2,7 +2,7 @@ import { Guid } from 'guid-typescript';
 import React from 'react';
 import { TagStats } from '../../../models/TagStats';
 import { AbstractComponent } from '../../../util/AbstractComponent';
-import { Database } from '../../../util/DatabaseInjection';
+import { Database } from '../../../util/DependencyInjection';
 import { ActionButtonComponent } from '../../ActionButtonComponent/ActionButtonComponent';
 import { ColorEdit } from '../../edits/ColorEdit/ColorEdit';
 import { TextEdit } from '../../edits/TextEdit/TextEdit';
@@ -86,7 +86,6 @@ export class TagsOverviewPage extends AbstractComponent<{}> {
         return [
             <div className="row">
                 <div className="col-6">
-                    <button onClick={this.newTag.bind(this)}>Tilføj</button>
                 </div>
                 <div className="col-6">
                     <ActionButtonComponent clickFun={this.save.bind(this)} text='Gem'></ActionButtonComponent>
@@ -97,6 +96,15 @@ export class TagsOverviewPage extends AbstractComponent<{}> {
                 <div className='col-4'>Farve:</div>
                 <div className='col-2'>Antal:</div>
                 <div className='col-2'>Slet:</div>
+            </div>,
+            <div className='row'>
+                <div className='col-2'>
+                    <EmojiButtonComponent
+                        clickFun={async () => this.newTag()}
+                        emoji='➕'
+                        ariaLabel='Plus'
+                    ></EmojiButtonComponent>
+                </div>
             </div>,
             ...this.tags.filter(t => !t.deleted).map(tag => this.renderTagLine(tag))
         ];

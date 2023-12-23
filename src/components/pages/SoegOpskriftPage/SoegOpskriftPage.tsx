@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { AbstractComponent } from '../../../util/AbstractComponent';
-import { Database } from '../../../util/DatabaseInjection';
+import { Database } from '../../../util/DependencyInjection';
 
 interface OpskriftLink {
     id: string,

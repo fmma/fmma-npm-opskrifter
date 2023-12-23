@@ -2,7 +2,7 @@ import { Guid } from 'guid-typescript';
 import React from 'react';
 import { Ingrediens } from '../../../models/Ingrediens';
 import { AbstractComponent } from '../../../util/AbstractComponent';
-import { Database } from '../../../util/DatabaseInjection';
+import { Database } from '../../../util/DependencyInjection';
 import { ActionButtonComponent } from '../../ActionButtonComponent/ActionButtonComponent';
 import { ColorEdit } from '../../edits/ColorEdit/ColorEdit';
 import { TextEdit } from '../../edits/TextEdit/TextEdit';

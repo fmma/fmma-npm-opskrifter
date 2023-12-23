@@ -1,6 +1,6 @@
 import React from 'react';
 import { AbstractComponent } from '../../util/AbstractComponent';
-import { Database } from '../../util/DatabaseInjection';
+import { Database } from '../../util/DependencyInjection';
 import { currentUser, currentUserFirstTime, login, logout } from '../../util/User';
 import { HeaderComponent } from '../HeaderComponent/HeaderComponent';
 import { MenuComponent } from '../MenuComponent/MenuComponent';
